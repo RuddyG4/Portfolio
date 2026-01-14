@@ -1,0 +1,26 @@
+---
+import { useTranslations } from "../i18n/ui";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as 'es' | 'en');
+const year = new Date().getFullYear();
+---
+
+<footer class="py-10 text-xs text-muted max-w-7xl mx-auto px-5">
+  <div
+    class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 border-t border-border pt-6"
+  >
+    <p>
+      © <span id="year">{year}</span> · {t('footer.location')}
+    </p>
+    <div class="flex gap-4">
+      <a class="hover:text-text transition" href="#top">{t('nav.home')}</a>
+      <a class="hover:text-text transition" href="#proyectos">{t('nav.projects')}</a>
+      <a class="hover:text-text transition" href="#contacto">{t('nav.contact')}</a>
+    </div>
+  </div>
+</footer>

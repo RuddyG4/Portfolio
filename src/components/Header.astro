@@ -1,0 +1,40 @@
+---
+import LanguagePicker from "./LanguagePicker.astro";
+import { useTranslations } from "../i18n/ui";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as 'es' | 'en');
+---
+
+<header
+  class="sticky top-0 z-50 backdrop-blur supports-backdrop-filter:bg-bg/55 bg-bg/75 border-b border-border"
+>
+  <div
+    class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-4"
+  >
+    <a href="#top" class="group inline-flex items-center gap-2">
+      <span
+        class="w-8 h-8 grid place-items-center rounded-lg bg-panel border border-border shadow-soft"
+      >
+        <span class="text-primary font-bold">{"{ }"}</span>
+      </span>
+      <span
+        class="text-sm tracking-tight text-text/90 group-hover:text-text transition"
+      >
+        Full Stack · Solutions
+      </span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm text-muted">
+      <a class="hover:text-text transition" href="#servicios">{t('nav.services')}</a>
+      <a class="hover:text-text transition" href="#about">{t('nav.about')}</a>
+      <a class="hover:text-text transition" href="#proyectos">{t('nav.projects')}</a>
+      <a class="hover:text-text transition" href="#contacto">{t('nav.contact')}</a>
+      <LanguagePicker currentLang={lang} />
+    </nav>
+  </div>
+</header>

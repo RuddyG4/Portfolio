@@ -1,28 +1,28 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Hero from "@components/Hero.astro";
 import ServiceCard from "@components/ServiceCard.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import StackSection from "@components/StackSection.astro";
-import { useTranslations } from "../i18n/ui";
-import "../styles/global.css";
-import perfumeriaMaryluImage from "../assets/images/perfumeria-marylu-hero-image.webp";
+import { useTranslations } from "../../i18n/ui";
+import "../../styles/global.css";
+import perfumeriaMaryluImage from "../../assets/images/perfumeria-marylu-hero-image.webp";
 
-const lang = 'es';
+const lang = 'en';
 const t = useTranslations(lang);
 
 const services = [
   {
     number: "01",
     category: "Web",
-    title: "Presencia Web",
+    title: "Web Presence",
     description:
-      "Sitios rápidos, claros y optimizados para convertir visitas en contactos.",
+      "Fast, clear sites optimized to convert visits into contacts.",
     features: [
-      "Landing / corporativo",
-      "SEO base + performance",
-      "WordPress a medida",
+      "Landing / Corporate",
+      "Base SEO + performance",
+      "Custom WordPress",
     ],
   },
   {
@@ -30,27 +30,27 @@ const services = [
     category: "Commerce",
     title: "E-commerce",
     description:
-      "Tiendas con catálogo, pagos, gestión y una experiencia fluida.",
+      "Stores with catalog, payments, management and a smooth experience.",
     features: [
-      "Catálogo + pedidos",
-      "Pagos / delivery",
-      "Panel administrativo",
+      "Catalog + orders",
+      "Payments / delivery",
+      "Admin panel",
     ],
   },
   {
     number: "03",
     category: "CRM",
-    title: "Flujos + CRM",
+    title: "Flows + CRM",
     description:
-      "Automatización de ventas y atención con integraciones entre plataformas.",
+      "Sales and customer service automation with platform integrations.",
     features: ["Leads → pipeline", "Webhooks / APIs", "WhatsApp (plus)"],
   },
   {
     number: "04",
     category: "Custom",
-    title: "Sistemas a medida",
+    title: "Custom Systems",
     description:
-      "Backend + APIs + dashboards listos para escalar y mantenerse.",
+      "Backend + APIs + dashboards ready to scale and maintain.",
     features: ["Laravel + Vue", "MySQL / SQL Server", "Cloud / DevOps base"],
   },
 ];
@@ -59,27 +59,27 @@ const projects = [
   {
     tags: "ecom web",
     category: "E-commerce",
-    badge: "Escalable",
-    title: "Tienda online + panel administrativo",
+    badge: "Scalable",
+    title: "Online store + admin panel",
     url: "https://perfumeriamarylu.com/",
     description:
-      "Desarrollo de E-commerce con catálogo optimizado, SEO localizado y contenido orientado a mejorar la visibilidad, ventas y conversión hacia WhatsApp.",
+      "E-commerce development with optimized catalog, localized SEO and content oriented to improve visibility, sales and conversion to WhatsApp.",
     techs: ["WordPress", "WooCommerce", "SEO"],
-    impact: "ventas",
-    ctaText: "Cotizar",
+    impact: "sales",
+    ctaText: "Quote",
     image: perfumeriaMaryluImage.src,
   },
   {
     tags: "crm web",
     category: "CRM",
-    badge: "Integraciones",
-    title: "CRM personalizado + Meta integration",
+    badge: "Integrations",
+    title: "Custom CRM + Meta integration",
     url: "https://panel.vayaquevalla.com/valla/map",
     description:
-      "CRM personalizado para la gestión completa del ciclo comercial, con integración en tiempo real a la API de Meta mediante webhooks y visualización interactiva de vallas publicitarias usando Google Maps.",
+      "Custom CRM for complete sales cycle management, with real-time Meta API integration via webhooks and interactive billboard visualization using Google Maps.",
     techs: ["Laravel", "APIs", "Vue.js", "Meta API", "GCP", "Google Maps"],
-    impact: "eficiencia operativa",
-    ctaText: "Quiero algo similar",
+    impact: "operational efficiency",
+    ctaText: "I want something similar",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
   },
@@ -87,13 +87,13 @@ const projects = [
     tags: "web",
     category: "Web",
     badge: "WordPress",
-    title: "Landing page corporativa",
+    title: "Corporate landing page",
     url: "https://viajesdante.com/landing-mendoza/",
     description:
-      "Diseño y desarrollo de landing page orientada a conversión, con enfoque en velocidad y experiencia de usuario. Pensada para campañas específicas y la generación de contactos comerciales de forma clara y efectiva.",
-    techs: ["WordPress", "Maquetación", "Elementor"],
-    impact: "visibilidad",
-    ctaText: "Hablemos",
+      "Design and development of conversion-oriented landing page, focused on speed and user experience. Designed for specific campaigns and generating business contacts clearly and effectively.",
+    techs: ["WordPress", "Layout", "Elementor"],
+    impact: "visibility",
+    ctaText: "Let's talk",
     image:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=400&fit=crop",
   },
@@ -175,19 +175,19 @@ const projects = [
             <p class="text-xs text-muted">{t('about.focus')}</p>
             <div class="mt-3 space-y-2 text-sm">
               <div class="flex items-start gap-3">
-                <span class="mt-1 w-2 h-2 rounded-full bg-teal-500"></span>
+                <span class="mt-1 w-2 h-2 rounded-full bg-teal"></span>
                 <p>
                   <span class="text-text">{t('about.focus1')}</span> {t('about.focus1Desc')}
                 </p>
               </div>
               <div class="flex items-start gap-3">
-                <span class="mt-1 w-2 h-2 rounded-full bg-teal-500"></span>
+                <span class="mt-1 w-2 h-2 rounded-full bg-teal"></span>
                 <p>
-                  {t('about.focus2')}
+                  <span class="text-text">{t('about.focus2')}</span>
                 </p>
               </div>
               <div class="flex items-start gap-3">
-                <span class="mt-1 w-2 h-2 rounded-full bg-teal-500"></span>
+                <span class="mt-1 w-2 h-2 rounded-full bg-teal"></span>
                 <p>
                   <span class="text-text">{t('about.focus3')}</span> {t('about.focus3Desc')}
                 </p>

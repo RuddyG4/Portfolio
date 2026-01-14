@@ -1,0 +1,82 @@
+---
+import { useTranslations } from "../i18n/ui";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as 'es' | 'en');
+
+const solutions = [
+  {
+    label: t('solutionPanel.need1'),
+    description: t('solutionPanel.need1Desc'),
+  },
+  {
+    label: t('solutionPanel.need2'),
+    description: t('solutionPanel.need2Desc'),
+  },
+  {
+    label: t('solutionPanel.need3'),
+    description: t('solutionPanel.need3Desc'),
+  },
+  {
+    label: t('solutionPanel.need4'),
+    description: t('solutionPanel.need4Desc'),
+  },
+];
+
+const techs = ["Laravel", "Vue.js", "WordPress", "GCP/Azure", "REST APIs"];
+---
+
+<div>
+  <div
+    class="rounded-2xl bg-panel/70 border border-border shadow-soft overflow-hidden"
+  >
+    <div
+      class="flex items-center justify-between px-4 py-3 border-b border-border"
+    >
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-red-400/80"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400/80"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-teal-400/80"></span>
+      </div>
+      <span class="text-xs text-muted">solution.preview</span>
+    </div>
+
+    <div class="p-5">
+      <p class="text-xs text-muted">{t('solutionPanel.title')}</p>
+      <ul class="mt-4 space-y-3 text-sm">
+        {
+          solutions.map((solution) => (
+            <li class="flex gap-3">
+              <span class="text-primary">$</span>
+              <span>
+                <span class="text-text">{solution.label}</span>{" "}
+                {solution.description}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="mt-6 rounded-xl bg-bg/40 border border-border p-4">
+        <p class="text-xs text-muted">{t('solutionPanel.solutionLabel')}</p>
+        <p class="mt-2 text-sm text-text leading-relaxed">
+          {t('solutionPanel.solutionText')}
+        </p>
+      </div>
+
+      <div class="mt-6 flex flex-wrap gap-2">
+        {
+          techs.map((tech) => (
+            <span class="text-xs px-2 py-1 rounded-md bg-bg/40 border border-border text-muted">
+              {tech}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

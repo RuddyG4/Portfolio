@@ -1,0 +1,17 @@
+---
+interface Props {
+  category: string;
+  technologies: string;
+  description: string;
+}
+
+const { category, technologies, description } = Astro.props;
+---
+
+<div class="rounded-xl bg-bg/35 border border-border p-4">
+  <p class="text-xs text-muted">{category}</p>
+  <p class="mt-2 text-sm">{technologies}</p>
+  <p class="mt-1 text-xs text-muted">
+    {description}
+  </p>
+</div>
